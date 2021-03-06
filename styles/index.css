@@ -87,7 +87,7 @@ main {
     color: var(--special-txt);
 }
 #about h1 {
-    font-size: 4.5rem;
+    font-size: 5rem;
     font-weight: 700;
     text-transform: uppercase;
 }
