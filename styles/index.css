@@ -84,6 +84,7 @@ main {
 }
 
 #about a, span {
+    position: relative;
     color: var(--special-txt);
     text-decoration: none;
 }
@@ -91,11 +92,6 @@ main {
     font-size: 5rem;
     font-weight: 700;
     text-transform: uppercase;
-}
-
-#about a {
-    color: var(--special-txt);
-    position: relative;
 }
 
 .subheading {
