@@ -113,7 +113,7 @@ main {
 
 .subheading a:hover {
     text-decoration: underline;
-    animation-name: woble-horizontal;
+    animation-name: wobble-horizontal;
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: 1;
@@ -136,7 +136,7 @@ a {
 
 /* Animations */
 
-@keyframes woble-horizontal {
+@keyframes wobble-horizontal {
     16% {
         left: 5px;
     }
