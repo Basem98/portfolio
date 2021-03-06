@@ -111,6 +111,15 @@ main {
     transition: text-decoration 1s ease;
 }
 
+.subheading a:hover {
+    text-decoration: underline;
+    animation-name: woble-horizontal;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+
 .nav-items a {
     color: var(--txt-color);
 }
@@ -122,4 +131,28 @@ li {
 
 a {
     text-decoration: none;
+}
+
+
+/* Animations */
+
+@keyframes woble-horizontal {
+    16% {
+        left: 5px;
+    }
+    32% {
+        left: -4px;
+    }
+    48% {
+        left: 3px;
+    }
+    64% {
+        left: -2px;
+    }
+    80% {
+        left: 1px;
+    }
+    100% {
+        left: 0px;
+    }
 }
