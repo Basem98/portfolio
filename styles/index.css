@@ -112,6 +112,15 @@ main {
     animation: 1s ease-in-out 1 wobble-horizontal;
 }
 
+.story-anch {
+    display: inline-block;
+    text-decoration: none;
+    transition: transform 1s ease-in-out;
+}
+
+.story-anch:hover {
+    animation: 1s ease-in-out 1 wobble-vertical;
+}
 
 .nav-items a{
     text-decoration: none;
@@ -128,7 +137,7 @@ li {
 
 @keyframes wobble-horizontal {
     16% {
-        transform: translateX(5px);
+        transform: translateX(6px);
     }
     32% {
         transform: translateX(-4px);
@@ -144,5 +153,26 @@ li {
     }
     100% {
         transform: translateX(0px);
+    }
+}
+
+@keyframes wobble-vertical {
+    16% {
+        transform: translateY(-8px);
+    }
+    32% {
+        transform: translateY(6px);
+    }
+    48% {
+        transform: translateY(-4px);
+    }
+    64% {
+        transform: translateY(3px);
+    }
+    80% {
+        transform: translateY(-2px);
+    }
+    100% {
+        transform: translateY(0px);
     }
 }
