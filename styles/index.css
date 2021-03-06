@@ -84,10 +84,9 @@ main {
 }
 
 #about a, span {
-    position: relative;
     color: var(--special-txt);
-    text-decoration: none;
 }
+
 #about h1 {
     font-size: 5rem;
     font-weight: 700;
@@ -101,13 +100,14 @@ main {
     margin-bottom: 3rem;
 }
 
-.subheading a {
-    display: relative;
+.mail-anch {
+    display: inline-block;
+    text-decoration: none;
     color: var(--special-txt);
-    transition: text-decoration 1s ease;
+    transition: text-decoration 1s ease, transform 1s ease-in-out;
 }
 
-.subheading a:hover {
+.mail-anch:hover {
     text-decoration: underline;
     animation: 1s ease-in-out 1 wobble-horizontal;
 }
@@ -128,21 +128,21 @@ li {
 
 @keyframes wobble-horizontal {
     16% {
-        left: 5px;
+        transform: translateX(5px);
     }
     32% {
-        left: -4px;
+        transform: translateX(-4px);
     }
     48% {
-        left: 3px;
+        transform: translateX(3px);
     }
     64% {
-        left: -2px;
+        transform: translateX(-2px);
     }
     80% {
-        left: 1px;
+        transform: translateX(1px);
     }
     100% {
-        left: 0px;
+        transform: translateX(0px);
     }
 }
