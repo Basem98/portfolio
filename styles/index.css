@@ -85,6 +85,7 @@ main {
 
 #about a, span {
     color: var(--special-txt);
+    text-decoration: none;
 }
 #about h1 {
     font-size: 5rem;
@@ -106,30 +107,23 @@ main {
 
 .subheading a {
     display: relative;
-    text-decoration: none;
     color: var(--special-txt);
     transition: text-decoration 1s ease;
 }
 
 .subheading a:hover {
     text-decoration: underline;
-    animation-name: wobble-horizontal;
-    animation-duration: 1s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: 1;
+    animation: 1s ease-in-out 1 wobble-horizontal;
 }
 
 
-.nav-items a {
+.nav-items a{
+    text-decoration: none;
     color: var(--txt-color);
 }
 
 li {
     list-style: none;
-    text-decoration: none;
-}
-
-a {
     text-decoration: none;
 }
 
