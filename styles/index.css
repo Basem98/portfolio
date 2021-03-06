@@ -47,16 +47,18 @@ main {
 .nav-items li {
     margin: 1.5rem;
     font-weight: 600;
+    font-size: 1.2rem;
     text-transform: uppercase;
 }
 
 .social-icons {
-    margin-top: 5rem;
+    margin-top: 3rem;
 }
 
 .social-icon {
-    width: 2.8rem;
-    height: 2.8rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-right: 1rem;
 }
 
 .personal-img {
