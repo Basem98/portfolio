@@ -41,15 +41,29 @@ main {
 }
 
 
-.main-section {
-    flex: auto;
-}
-
 .nav-items li {
     margin: 1.5rem;
     font-weight: 600;
     font-size: 1.2rem;
     text-transform: uppercase;
+    transition: transform 1s ease-in-out, color 1s ease-in-out;
+}
+
+.nav-items a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--txt-color);
+    transition: transform 1s ease-in-out, color 1.5s ease-in-out;
+}
+
+.nav-items a:hover {
+    transform: scale(1.25);
+    color: var(--special-txt);
+}
+
+li {
+    list-style: none;
+    text-decoration: none;
 }
 
 .social-icons {
@@ -68,6 +82,12 @@ main {
     border: 0.6rem solid var(--txt-color);
     border-radius: 50%;
     margin-bottom: 2rem;
+}
+
+
+
+.main-section {
+    flex: auto;
 }
 
 .resume-itm {
@@ -133,14 +153,4 @@ main {
 
 .story-anch:hover {
     animation: 1s ease-in-out 1 wobble-vertical;
-}
-
-.nav-items a{
-    text-decoration: none;
-    color: var(--txt-color);
-}
-
-li {
-    list-style: none;
-    text-decoration: none;
 }
