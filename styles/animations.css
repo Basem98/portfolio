@@ -1,0 +1,127 @@
+/* Animations */
+
+
+/* Make a block wobble horizontally */
+
+@keyframes wobble-horizontal {
+    16% {
+        transform: translateX(6px);
+    }
+    32% {
+        transform: translateX(-4px);
+    }
+    48% {
+        transform: translateX(3px);
+    }
+    64% {
+        transform: translateX(-2px);
+    }
+    80% {
+        transform: translateX(1px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+/* Make a block wobble vertically */
+
+@keyframes wobble-vertical {
+    16% {
+        transform: translateY(-8px);
+    }
+    32% {
+        transform: translateY(6px);
+    }
+    48% {
+        transform: translateY(-4px);
+    }
+    64% {
+        transform: translateY(3px);
+    }
+    80% {
+        transform: translateY(-2px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* 
+ * Make a block drop from the top of the browser window
+ * with a little wobble effect at the end 
+ */
+
+@keyframes drop-from-top {
+    0% {
+        transform: translateY(-1000px);
+    }
+    80% {
+        transform: translateY(40px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Make a block drop 50 pixels from its original position */
+
+@keyframes drop-down {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(50px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Make a block slide in to the left
+ * from the right side of the browser window,
+ * eventually creating a wobble effect at the end
+ */
+
+@keyframes slide-from-right {
+    0% {
+        transform: translateX(5000px);
+    }
+    45% {
+        transform: translateX(-25px);
+    }
+    52% {
+        transform: translateX(-25px);
+    }
+    70% {
+        transform: translateX(40px);
+    }
+    80% {
+        transform: translateX(-10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Make a block wobble slightly,
+ * moving more to the left side as if its right side was hit by something
+ */
+
+@keyframes slide-left {
+    0% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(-40px);
+    }
+    70% {
+        transform: translateX(5px);
+    }
+    90% {
+        transform: translateX(-10px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
