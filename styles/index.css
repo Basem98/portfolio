@@ -116,13 +116,13 @@ li {
 
 .first-name {
     display: inline-block;
-    animation: 2s ease-in-out 1 drop-from-top, 1s ease-in-out 1 2.15s slide-left;
+    animation: 1.9s ease-in-out 1 drop-from-top, 1s ease 1 2.55s slide-left;
 }
 
 .last-name {
     display: inline-block;
     color: var(--special-txt);
-    animation: 5s ease-in-out 1 slide-from-right;
+    animation: 7s ease-in-out 1 slide-from-right;
 }
 
 .subheading {
@@ -130,7 +130,7 @@ li {
     font-size: 1rem;
     font-weight: 550;
     margin-bottom: 3rem;
-    animation: 1s ease-in-out 1 1.3s drop-down;
+    animation: 1s ease-in-out 1 1.22s drop-down;
 }
 
 .mail-anch {
@@ -148,7 +148,6 @@ li {
 .story-anch {
     display: inline-block;
     text-decoration: none;
-    transition: transform 1s ease-in-out;
 }
 
 .story-anch:hover {
