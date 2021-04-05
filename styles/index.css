@@ -40,25 +40,44 @@ main {
     background-color: var(--nav-bg);
 }
 
+.nav-items {
+    width: 100%;
+}
 
 .nav-items li {
-    margin: 1.5rem;
+    margin: 1.5rem 0 1.5rem 0;
     font-weight: 600;
     font-size: 1.2rem;
     text-transform: uppercase;
-    transition: transform 1s ease-in-out, color 1s ease-in-out;
+    background: linear-gradient(to left, var(--primary-bg) 0%, var(--nav-bg) 0%);
+    padding: 0.6em 0 0.6em 0;
+    transition: color 1s ease-in-out, background 1s ease 0.3s;
+}
+
+.nav-items li:hover {
+    animation: 0.3s linear 1 sweep-to-left;
+    background: var(--primary-bg);
 }
 
 .nav-items a {
     display: inline-block;
     text-decoration: none;
     color: var(--txt-color);
-    transition: transform 1s ease-in-out, color 1.5s ease-in-out;
+    transition: transform 1s ease-in-out, color 0.1s ease-in-out;
 }
 
 .nav-items a:hover {
     transform: scale(1.25);
     color: var(--special-txt);
+}
+
+.active-nav-anchor {
+    color: var(--special-txt) !important;
+    transform: scale(1.25);
+}
+
+.active-nav-item {
+    background: var(--primary-bg) !important;
 }
 
 li {

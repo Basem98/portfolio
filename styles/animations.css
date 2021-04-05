@@ -135,3 +135,73 @@
         transform: translateX(0px);
     }
 }
+
+
+/*
+ * Make a block's background change its color gradually from right to left
+ */
+ @keyframes sweep-to-left {
+    0% {
+        background: linear-gradient(to left, var(--primary-bg) 0%, var(--nav-bg) 0%);
+    }
+    5% {
+        background: linear-gradient(to left, var(--primary-bg) 5%, var(--nav-bg) 5%);
+    }
+    10% {
+        background: linear-gradient(to left, var(--primary-bg)10%, var(--nav-bg) 10%);
+    }
+    15% {
+        background: linear-gradient(to left, var(--primary-bg) 15%, var(--nav-bg) 15%);
+    }
+    20% {
+        background: linear-gradient(to left, var(--primary-bg) 20%, var(--nav-bg)20%);
+    }
+    25% {
+        background: linear-gradient(to left, var(--primary-bg) 25%, var(--nav-bg) 25%);
+    }
+    30% {
+        background: linear-gradient(to left, var(--primary-bg) 30%, var(--nav-bg) 30%);
+    }
+    35% {
+        background: linear-gradient(to left, var(--primary-bg) 35%, var(--nav-bg) 35%);
+    }
+    40% {
+        background: linear-gradient(to left, var(--primary-bg) 40%, var(--nav-bg) 40%);
+    }
+    45% {
+        background: linear-gradient(to left, var(--primary-bg) 45%, var(--nav-bg) 45%);
+    }
+    50% {
+        background: linear-gradient(to left, var(--primary-bg) 50%, var(--nav-bg) 50%);
+    }
+    55% {
+        background: linear-gradient(to left, var(--primary-bg) 55%, var(--nav-bg) 55%);
+    }
+    60% {
+        background: linear-gradient(to left, var(--primary-bg) 60%, var(--nav-bg) 60%);
+    }
+    65% {
+        background: linear-gradient(to left, var(--primary-bg) 65%, var(--nav-bg) 65%);
+    }
+    70% {
+        background: linear-gradient(to left, var(--primary-bg) 70%, var(--nav-bg) 70%);
+    }
+    75% {
+        background: linear-gradient(to left, var(--primary-bg) 75%, var(--nav-bg) 75%);
+    }
+    80% {
+        background: linear-gradient(to left, var(--primary-bg) 80%, var(--nav-bg) 80%);
+    }
+    85% {
+        background: linear-gradient(to left, var(--primary-bg) 85%, var(--nav-bg) 85%);
+    }
+    90% {
+        background: linear-gradient(to left, var(--primary-bg) 90%, var(--nav-bg) 90%);
+    }
+    95% {
+        background: linear-gradient(to left, var(--primary-bg) 95%, var(--nav-bg) 95%);
+    }
+    100% {
+        background: linear-gradient(to left, var(--primary-bg) 100%, var(--nav-bg) 100%);
+    }
+}
