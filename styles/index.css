@@ -51,7 +51,15 @@ main {
     text-transform: uppercase;
     background: linear-gradient(to left, var(--primary-bg) 0%, var(--nav-bg) 0%);
     padding: 0.6em 0 0.6em 0;
-    transition: color 1s ease-in-out, background 1s ease 0.3s;
+    transition: color 1s ease-in-out, background 0.3s ease;
+}
+
+.active-nav-item {
+    background: var(--primary-bg) !important;
+}
+
+.inactive-nav-item {
+    animation: 0.3s linear reverse sweep-to-left;
 }
 
 .nav-items li:hover {
@@ -76,9 +84,6 @@ main {
     transform: scale(1.25);
 }
 
-.active-nav-item {
-    background: var(--primary-bg) !important;
-}
 
 li {
     list-style: none;

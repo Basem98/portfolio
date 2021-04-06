@@ -22,13 +22,25 @@ const navItems = document.getElementsByClassName('nav-items').item(0);
 
 function activateNavItem(event) {
     const clickedAnchor = event.target;
-    for (let i = 0; i < navItems.children.length; i += 1) {
-        const currentListItem = navItems.children.item(i);
-        currentListItem.classList.remove('active-nav-item');
-        currentListItem.children.item(0).classList.remove('active-nav-anchor');
+    if (!clickedAnchor.classList.contains('active-nav-anchor')) {
+        for (let i = 0; i < navItems.children.length; i += 1) {
+            const currentListItem = navItems.children.item(i);
+
+
+            if (currentListItem.classList.contains('active-nav-item')) {
+                currentListItem.classList.remove('active-nav-item');
+                currentListItem.children.item(0).classList.remove('active-nav-anchor');
+                currentListItem.classList.add('inactive-nav-item');
+                setTimeout(
+                    () => currentListItem.classList.remove('inactive-nav-item')
+                    , 300
+                );
+                break;
+            }
+        }
+        clickedAnchor.classList.add('active-nav-anchor');
+        clickedAnchor.parentElement.classList.add('active-nav-item');
     }
-    clickedAnchor.classList.add('active-nav-anchor');
-    clickedAnchor.parentElement.classList.add('active-nav-item');
 }
 
 
