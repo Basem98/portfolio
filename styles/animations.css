@@ -27,20 +27,23 @@
 /* Make a block wobble vertically */
 
 @keyframes wobble-vertical {
-    16% {
+    8% {
         transform: translateY(-8px);
     }
-    32% {
+    16% {
         transform: translateY(6px);
     }
-    48% {
+    24% {
         transform: translateY(-4px);
     }
-    64% {
+    32% {
         transform: translateY(3px);
     }
-    80% {
+    40% {
         transform: translateY(-2px);
+    }
+    48% {
+        transform: translateY(0px);
     }
     100% {
         transform: translateY(0px);

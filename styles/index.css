@@ -172,8 +172,5 @@ li {
 .story-anch {
     display: inline-block;
     text-decoration: none;
-}
-
-.story-anch:hover {
-    animation: 1s ease-in-out 1 wobble-vertical;
+    animation: 3s ease-in-out infinite wobble-vertical;
 }
