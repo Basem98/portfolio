@@ -237,7 +237,7 @@ li {
         background-color: var(--nav-bg);
     }
 
-    .side-menu {
+    .nav-menu {
         position: fixed;
         top: 62px;
         display: flex;
