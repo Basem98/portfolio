@@ -6,7 +6,9 @@
  * A list of the navigation items in the side navigation bar
  */
 const navItems = document.getElementsByClassName('nav-items').item(0);
-
+const mobileNav = document.getElementsByClassName('toggle-nav').item(0);
+const navToggler = document.getElementsByClassName('navbar-toggler').item(0);
+const navMenu = document.getElementsByClassName('nav-menu').item(0);
 
 /**
  * Helper Functions
@@ -22,6 +24,9 @@ const navItems = document.getElementsByClassName('nav-items').item(0);
 
 function activateNavItem(event) {
     const clickedAnchor = event.target;
+    if (document.body.clientWidth < 850)
+        navMenu.style.display = 'none';
+
     if (!clickedAnchor.classList.contains('active-nav-anchor')) {
         for (let i = 0; i < navItems.children.length; i += 1) {
             const currentListItem = navItems.children.item(i);
@@ -40,7 +45,16 @@ function activateNavItem(event) {
         }
         clickedAnchor.classList.add('active-nav-anchor');
         clickedAnchor.parentElement.classList.add('active-nav-item');
+
     }
+}
+
+/**
+ * @description Toggle the navigation menu in smaller displays
+ */
+
+function toggleMobileNavBar() {
+    navMenu.style.display = navMenu.style.display == 'none' ? 'flex' : 'none';
 }
 
 
@@ -56,3 +70,8 @@ for (let i = 0; i < navItems.children.length; i += 1) {
     const currentAnchor = navItems.children.item(i).children.item(0);
     currentAnchor.addEventListener('click', activateNavItem);
 }
+
+/**
+ * Toggle the navigation menu in smaller displays
+ */
+navToggler.addEventListener('click', toggleMobileNavBar);
