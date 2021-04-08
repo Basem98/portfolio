@@ -1,9 +1,11 @@
+/* Global styling rules */
+
 :root {
     --primary-bg: #f8f1f1;
     --nav-bg: #a3d2ca;
     --special-txt: #eb5e0b;
     --txt-color: #459996;
-    font-size: 15px;
+    font-size: 14px;
     font-family: 'Oswald', sans-serif;
 }
 
@@ -19,25 +21,6 @@ body {
     height: 100vh;
     width: 100vw;
     overflow-x: hidden;
-}
-
-main {
-    display: flex;
-    flex-direction: row;
-}
-
-.side-nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: sticky;
-    top: 0px;
-    left: 0px;
-    height: 100vh;
-    min-width: 260px;
-    background-color: var(--nav-bg);
 }
 
 .nav-items {
@@ -84,6 +67,13 @@ main {
     transform: scale(1.25);
 }
 
+.personal-img {
+    height: 150px;
+    width: 150px;
+    border: 0.6rem solid var(--txt-color);
+    border-radius: 50%;
+    margin-bottom: 2rem;
+}
 
 li {
     list-style: none;
@@ -100,16 +90,6 @@ li {
     margin-right: 1rem;
 }
 
-.personal-img {
-    height: 150px;
-    width: 150px;
-    border: 0.6rem solid var(--txt-color);
-    border-radius: 50%;
-    margin-bottom: 2rem;
-}
-
-
-
 .main-section {
     flex: auto;
 }
@@ -117,7 +97,7 @@ li {
 .resume-itm {
     height: 100vh;
     width: 100%;
-    padding: 4rem 4rem 4rem 3rem;
+    padding: 4rem 10rem 4rem 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -181,4 +161,158 @@ li {
     display: inline-block;
     text-decoration: none;
     animation: 3s ease-in-out infinite wobble-vertical;
+}
+
+
+/* Desktop-specific styling rules */
+
+@media screen and (min-width: 800px) {
+    main {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .side-menu {
+        display: contents;
+    }
+
+    .toggle-nav {
+        display: none;
+    }
+
+    .side-nav {
+        display: flex;
+        z-index: 9999;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: sticky;
+        top: 0px;
+        left: 0px;
+        height: 100vh;
+        min-width: 260px;
+        background-color: var(--nav-bg);
+    }
+
+    
+}
+
+@media screen and (min-width: 1300px) {
+    .resume-itm {
+        padding-right: 40rem;
+    }
+}
+
+/* Mobile-specific styling rules */
+
+@media only screen and (max-width: 550px) {
+    :root {
+        font-size: 12px;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .side-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: var(--nav-bg);
+        z-index: 9999;
+        height: fit-content;
+    }
+
+    .toggle-nav {
+        z-index: 9999;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: center;
+        background-color: var(--nav-bg);
+    }
+
+    .side-menu {
+        position: fixed;
+        top: 62px;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--nav-bg);
+        width: 100%;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+        display: none;
+    }
+
+    .main-section {
+        position: absolute;
+        top: 65px;
+    }
+
+    .personal-img {
+        align-self: center;
+        height: 150px;
+        width: 150px;
+        border: 0.6rem solid var(--txt-color);
+        border-radius: 50%;
+        margin: 2rem 0 2rem 0;
+    }
+
+    .img-icon {
+        height: 50px;
+        width: 50px;
+        border: 0.3rem solid var(--txt-color);
+        border-radius: 50%;
+        margin: 0.5rem;
+    }
+
+    .personal-img {
+        margin-bottom: 0;
+    }
+
+    .mobile-nav-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+    }
+
+    .title-name {
+        margin: 1.4rem 0 0 0.5rem;
+        font-weight: 300;
+    }
+
+    .navbar-toggler {
+        padding: 0.1rem 3rem 0.1rem 3rem;
+        max-height: 2rem;
+        text-align: center;
+        margin-top: 1.3rem;
+        background-color: var(--nav-bg);
+        border: none;
+        outline: none;
+        font-size: 2rem;
+        color: var(--txt-color);
+    }
+
+    .social-icons {
+        margin-top: 1rem;
+    }
+    
+    .social-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-right: 1rem;
+    }
+    #about h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
 }
