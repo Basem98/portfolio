@@ -314,23 +314,35 @@ li {
     }
 
     #about h1 {
-        font-size: 4.2rem;
+        margin-top: 5.5rem;
+        font-size: 7.2rem;
         font-weight: 700;
         text-transform: uppercase;
     }
 
     .subheading {
         margin-top: 2rem;
+        font-size: 1.6rem;
     }
+
+
+    .first-name {
+        display: inline-block;
+        animation: 1.9s ease-in-out 1 drop-from-top
+    }
+
+    .last-name {
+        display: inline-block;
+        color: var(--special-txt);
+        animation: 7s ease-in-out 1 slide-from-right;
+    }
+
 }
 
 @media screen and (max-width: 350px) {
     #about h1 {
-        font-size: 3.2rem;
-        font-weight: 700;
-        text-transform: uppercase;
+        font-size: 5.8rem;
     }
-
     .resume-itm {
         padding: 1rem;
     }
@@ -360,7 +372,19 @@ li {
         display: none;
     }
 
-    .subheading {
-        font-size: 1.6rem;
+}
+
+@media screen and (min-width: 750px) {
+
+    .first-name {
+        display: inline-block;
+        animation: 1.9s ease-in-out 1 drop-from-top, 1s ease 1 2.55s slide-left;
     }
+    
+    .last-name {
+        display: inline-block;
+        color: var(--special-txt);
+        animation: 7s ease-in-out 1 slide-from-right;
+    }
+    
 }
