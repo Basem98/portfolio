@@ -39,12 +39,12 @@ p {
 
 .nav-items li {
     font-family: 'Playfair Display', sans-serif;
-    margin: 0.4em 0 0.4em 0;
+    margin-top: 0.3em;
     font-weight: 600;
     font-size: 1.6rem;
     text-transform: uppercase;
     background: linear-gradient(to left, var(--primary-bg) 0%, var(--nav-bg) 0%);
-    padding: 0.6em 0 0.6em 0;
+    padding: 0.6em 1em 0.6em 1em;
     transition: color 1s ease-in-out, background 0.3s ease;
 }
 
@@ -99,10 +99,6 @@ li {
     width: 3.5rem;
     height: 3.5rem;
     margin-right: 1em;
-}
-
-.main-section {
-    flex: auto;
 }
 
 .resume-itm {
@@ -194,7 +190,7 @@ li {
 
     .side-nav {
         display: flex;
-        z-index: 9999;
+        z-index: 99;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -207,7 +203,9 @@ li {
         background-color: var(--nav-bg);
     }
 
-    
+    .img-container {
+        display: contents;
+    }
 }
 
 @media screen and (min-width: 1300px) {
@@ -220,20 +218,17 @@ li {
 
 @media only screen and (max-width: 850px) {
     main {
-        display: flex;
-        flex-direction: column;
+        display: block;
     }
 
     .side-nav {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        display: block;
         background-color: var(--nav-bg);
-        z-index: 9999;
+        z-index: 99;
     }
 
     .toggle-nav {
-        z-index: 9999;
+        z-index: 99;
         position: fixed;
         top: 0;
         width: 100%;
@@ -246,7 +241,7 @@ li {
 
     .nav-menu {
         position: fixed;
-        top: 62px;
+        z-index: 99;
         display: flex;
         flex-direction: column;
         background-color: var(--nav-bg);
@@ -259,16 +254,10 @@ li {
 
     .main-section {
         position: absolute;
-        top: 65px;
     }
 
     .personal-img {
-        align-self: center;
-        height: 15rem;
-        width: 15rem;
-        border: 0.6rem solid var(--txt-color);
-        border-radius: 50%;
-        margin: 2em 0 2em 0;
+        display: none;
     }
 
     .img-icon {
@@ -344,12 +333,6 @@ li {
 
     .main-section {
         position: absolute;
-        top: 80px;
-    }
-
-    .personal-img {
-        height: 10rem;
-        width: 10rem;
     }
 
     .img-icon {
@@ -361,8 +344,8 @@ li {
     }
 
     .nav-menu {
+        z-index: 99;
         position: fixed;
-        top: 45px;
         display: flex;
         flex-direction: column;
         background-color: var(--nav-bg);
@@ -371,5 +354,9 @@ li {
         align-content: center;
         text-align: center;
         display: none;
+    }
+
+    .subheading {
+        font-size: 1.6rem;
     }
 }

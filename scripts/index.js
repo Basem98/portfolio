@@ -9,7 +9,7 @@ const navItems = document.getElementsByClassName('nav-items').item(0);
 const mobileNav = document.getElementsByClassName('toggle-nav').item(0);
 const navToggler = document.getElementsByClassName('navbar-toggler').item(0);
 const navMenu = document.getElementsByClassName('nav-menu').item(0);
-
+const mainSection = document.getElementsByClassName('main-section').item(0);
 /**
  * Helper Functions
  */
@@ -75,3 +75,17 @@ for (let i = 0; i < navItems.children.length; i += 1) {
  * Toggle the navigation menu in smaller displays
  */
 navToggler.addEventListener('click', toggleMobileNavBar);
+
+
+/**
+ * Set the position of the hidden navigation menu and the main section,
+ * based on the position of the fixed navigation bar toggler,
+ * only when the DOM content is loaded.
+ * This is a mobile-specific event listener!
+ */
+if (document.body.clientWidth < 850)
+    document.addEventListener('DOMContentLoaded', () => {
+        const navBarTogglerHeight = window.getComputedStyle(mobileNav).height;
+        navMenu.style.top = navBarTogglerHeight;
+        mainSection.style.top = navBarTogglerHeight;
+    });
