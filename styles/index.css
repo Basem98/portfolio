@@ -149,7 +149,7 @@ li {
     text-transform: uppercase;
     font-size: 1.8rem;
     font-weight: 550;
-    margin-bottom: 3em;
+    margin-bottom: 4em;
     animation: 1s ease-in-out 1 1.22s drop-down;
 }
 
@@ -317,6 +317,10 @@ li {
         font-size: 4.2rem;
         font-weight: 700;
         text-transform: uppercase;
+    }
+
+    .subheading {
+        margin-top: 2rem;
     }
 }
 
