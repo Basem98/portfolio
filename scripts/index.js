@@ -10,6 +10,9 @@ const mobileNav = document.getElementsByClassName('toggle-nav').item(0);
 const navToggler = document.getElementsByClassName('navbar-toggler').item(0);
 const navMenu = document.getElementsByClassName('nav-menu').item(0);
 const mainSection = document.getElementsByClassName('main-section').item(0);
+const imgIcon = document.getElementsByClassName('img-icon').item(0);
+const imgContainer = document.getElementsByClassName('img-container').item(0);
+const activeImg = document.getElementsByClassName('active-img').item(0);
 /**
  * Helper Functions
  */
@@ -89,3 +92,18 @@ if (document.body.clientWidth < 850)
         navMenu.style.top = navBarTogglerHeight;
         mainSection.style.top = navBarTogglerHeight;
     });
+
+
+/**
+ * When the user clicks the image icon,
+ * Make it scale and move smoothly to the center of the display
+ */
+imgIcon.addEventListener('click', () => {
+    imgContainer.style.display = 'flex';
+    activeImg.classList.add('animated-img');
+    setTimeout(() => {
+        activeImg.classList.remove('animated-img');
+        imgContainer.style.display = 'none';
+    }, 8000);
+});
+
