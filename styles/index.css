@@ -96,9 +96,20 @@ li {
 }
 
 .social-icon {
-    width: 3.5rem;
-    height: 3.5rem;
+    display: inline-block;
+    width: 4rem !important;
+    height: 4rem !important;
     margin-right: 1em;
+}
+
+.icon-svg {
+    fill: var(--txt-color);
+    transition: transform 0.1s ease-in-out, fill 0.1s ease-in-out;
+}
+
+.icon-svg:hover {
+    transform: scale(1.2);
+    fill: var(--special-txt);
 }
 
 .resume-itm {
