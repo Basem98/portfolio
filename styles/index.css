@@ -183,6 +183,33 @@ li {
 }
 
 
+#projects {
+    padding: 48px !important;
+}
+
+.projects-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.projects-container img {
+    width: 35rem;
+    height: 20rem;
+    margin: 0 10rem 10rem 0;
+}
+
+.projects-container img {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+
+.projects-container img:hover {
+    transform: scale(1.03);
+}
+
 /* Desktop-specific styling rules */
 
 @media screen and (min-width: 851px) {
