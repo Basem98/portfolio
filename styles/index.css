@@ -194,10 +194,17 @@ li {
     justify-content: center;
 }
 
+.projects-container div {
+    text-align: center;
+    margin: 5rem;
+    padding: 1rem;
+    color: var(--special-txt);
+}
+
 .projects-container img {
     width: 35rem;
     height: 20rem;
-    margin: 5rem;
+    margin-bottom: 1rem;
 }
 
 .projects-container img {
@@ -206,7 +213,7 @@ li {
 }
 
 
-.projects-container img:hover {
+.projects-container div:hover {
     transform: scale(1.03);
 }
 
