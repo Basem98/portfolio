@@ -184,7 +184,7 @@ li {
 
 
 #projects {
-    padding: 48px !important;
+    padding: 4.8rem !important;
 }
 
 .projects-container {
@@ -246,12 +246,6 @@ li {
     }
 }
 
-@media screen and (min-width: 1300px) {
-    .resume-itm {
-        padding-right: 40rem;
-    }
-}
-
 /* Mobile-specific styling rules */
 
 @media only screen and (max-width: 850px) {
@@ -288,10 +282,6 @@ li {
         align-content: center;
         text-align: center;
         display: none;
-    }
-
-    .main-section {
-        position: absolute;
     }
 
     .img-container {
@@ -386,7 +376,7 @@ li {
 
     #about h1 {
         margin-top: 5.5rem;
-        font-size: 7.2rem;
+        font-size: 6.8rem;
         font-weight: 700;
         text-transform: uppercase;
     }
@@ -417,10 +407,6 @@ li {
 
     .resume-itm {
         padding: 1rem;
-    }
-
-    .main-section {
-        position: absolute;
     }
 
     .img-icon {
