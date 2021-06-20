@@ -197,7 +197,7 @@ li {
 .projects-container img {
     width: 35rem;
     height: 20rem;
-    margin: 0 10rem 10rem 0;
+    margin: 5rem;
 }
 
 .projects-container img {
@@ -396,6 +396,13 @@ li {
         display: inline-block;
         color: var(--special-txt);
         animation: 7s ease-in-out 1 slide-from-right;
+    }
+
+
+    .projects-container img {
+        width: 30rem;
+        height: 15rem;
+        margin: 5rem;
     }
 
 }
