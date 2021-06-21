@@ -217,6 +217,10 @@ li {
     transform: scale(1.03);
 }
 
+.projects-container div:active {
+    transform: scale(0.97);
+}
+
 .preview-container {
     position: fixed;
     top: 0;
@@ -275,6 +279,8 @@ li {
 .project-preview video {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 1);
     border-radius: 0.5rem;
+    width: 128rem;
+    height: 72rem;
 }
 
 .arrow {

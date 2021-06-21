@@ -13,6 +13,13 @@ const mainSection = document.getElementsByClassName('main-section').item(0);
 const imgIcon = document.getElementsByClassName('img-icon').item(0);
 const imgContainer = document.getElementsByClassName('img-container').item(0);
 const activeImg = document.getElementsByClassName('active-img').item(0);
+const projectsContainer = document.getElementsByClassName('projects-container').item(0);
+const projectsThumbnails = projectsContainer.getElementsByTagName('img');
+const previewExitSign = document.getElementsByClassName('exit-sign').item(0);
+
+let prevContainer = '';
+let projectDescription = '';
+
 /**
  * Helper Functions
  */
@@ -52,6 +59,41 @@ function activateNavItem(event) {
     }
 }
 
+
+
+/**
+ * @description When a project's thumbnail is clicked, open the preview page for that specific project,
+ * based on the image's id. Then dynamically add all the project-specific data for that project.
+ * @param {Event} event An event object that's based on the main Event interface,
+ * and has properties specific to the dispatched event
+ */
+
+function previewProject(event) {
+    const clickedThumbnail = event.target;
+    const projectID = clickedThumbnail.id;
+    const projectTitle = document.getElementsByClassName('project-title').item(0);
+    const videoPlayer = document.getElementsByClassName('video-player').item(0);
+    prevContainer = document.getElementsByClassName('preview-container').item(0);
+    projectDescription = document.getElementsByClassName(`${projectID}-desc`).item(0);
+
+    projectTitle.textContent = clickedThumbnail.alt;
+    videoPlayer.src = `${clickedThumbnail.src.slice(0, -4)}.m4v`;
+    projectDescription.style.display = 'flex';
+    prevContainer.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+
+
+function exitProjectPreview() {
+    if (prevContainer) {
+        prevContainer.style.display = 'none';
+        projectDescription.style.display = 'none';
+        document.body.style.overflowY = 'scroll';
+    }
+}
+
+
 /**
  * @description Toggle the navigation menu in smaller displays
  */
@@ -66,6 +108,8 @@ function toggleMobileNavBar() {
  */
 
 
+/** Desktop-specific event handlers */
+
 /**
  * When a navigation item is clicked, change its color and its background
  */
@@ -79,6 +123,22 @@ for (let i = 0; i < navItems.children.length; i += 1) {
  */
 navToggler.addEventListener('click', toggleMobileNavBar);
 
+/**
+ * When a project thumbnail is clicked, open the preview page of that project
+ */
+for (let i = 0; i < projectsThumbnails.length; i += 1) {
+    const currentProjectThumb = projectsThumbnails.item(i);
+    currentProjectThumb.addEventListener('click', previewProject);
+}
+
+
+/**
+ * When the exit "X" sign is clicked, close the project's preview page
+ */
+ previewExitSign.addEventListener('click', exitProjectPreview);
+
+
+/** Mobile-specific event handlers */
 
 /**
  * Set the position of the hidden navigation menu and the main section,
