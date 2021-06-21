@@ -198,7 +198,7 @@ li {
     text-align: center;
     margin: 5rem;
     padding: 1rem;
-    color: var(--special-txt);
+    color: var(--txt-color);
 }
 
 .projects-container img {
