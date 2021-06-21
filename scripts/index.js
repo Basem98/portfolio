@@ -84,6 +84,9 @@ function previewProject(event) {
 }
 
 
+/**
+ * @description When the exit "X" sign is clicked, close the preview page and return to the portfolio
+ */
 
 function exitProjectPreview() {
     if (prevContainer) {
