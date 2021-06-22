@@ -16,9 +16,16 @@ const activeImg = document.getElementsByClassName('active-img').item(0);
 const projectsContainer = document.getElementsByClassName('projects-container').item(0);
 const projectsThumbnails = projectsContainer.getElementsByTagName('img');
 const previewExitSign = document.getElementsByClassName('exit-sign').item(0);
+const playNextVideo = document.getElementsByClassName('rArrow').item(0);
+const playPrevVideo = document.getElementsByClassName('lArrow').item(0);
+const projectDescriptionContainer = document.getElementsByClassName('project-description').item(0);
+const currentProjectTitle = document.getElementsByClassName('project-title').item(0);
+const videoPlayer = document.getElementsByClassName('video-player').item(0);
+
 
 let prevContainer = '';
 let projectDescription = '';
+let currentDescriptionIndex = '';
 
 /**
  * Helper Functions
@@ -71,12 +78,19 @@ function activateNavItem(event) {
 function previewProject(event) {
     const clickedThumbnail = event.target;
     const projectID = clickedThumbnail.id;
-    const projectTitle = document.getElementsByClassName('project-title').item(0);
-    const videoPlayer = document.getElementsByClassName('video-player').item(0);
+
+    /** 
+     * Turn the array-like HTMLCollection of thumbnails into an array,
+     * by using call() to make it the "this" value inside of slice,
+     * then slice would make an array copy of the collection,
+     * and eventually search it for the clickedThumbnail and get its index
+     */
+    currentDescriptionIndex = Array.prototype.slice.call(projectsThumbnails).indexOf(clickedThumbnail);
+
     prevContainer = document.getElementsByClassName('preview-container').item(0);
     projectDescription = document.getElementsByClassName(`${projectID}-desc`).item(0);
 
-    projectTitle.textContent = clickedThumbnail.alt;
+    currentProjectTitle.textContent = clickedThumbnail.alt;
     videoPlayer.src = `${clickedThumbnail.src.slice(0, -4)}.m4v`;
     projectDescription.style.display = 'flex';
     prevContainer.style.display = 'flex';
@@ -96,6 +110,27 @@ function exitProjectPreview() {
     }
 }
 
+
+/**
+ * @description Preview the description page for either the next or the previoues project
+ * @param {Number} indexIncrementer A number that can either be 1 or -1, based on the clicked arrow,
+ * which is then used to determine whether to preview the next or the previous project
+ */
+function switchProject(indexIncrementer) {
+    currentDescriptionIndex += indexIncrementer;
+    currentDescriptionIndex = currentDescriptionIndex == projectsThumbnails.length ? 0 
+    : currentDescriptionIndex < 0 ? projectsThumbnails.length - 1 : currentDescriptionIndex;
+
+    const newProjectThumbnail = projectsThumbnails.item(currentDescriptionIndex);
+
+    projectDescription.style.display = 'none';
+
+    currentProjectTitle.textContent = newProjectThumbnail.alt;
+    videoPlayer.src = `${newProjectThumbnail.src.slice(0, -4)}.m4v`;
+
+    projectDescription = document.getElementsByClassName(`${newProjectThumbnail.id}-desc`).item(0);
+    projectDescription.style.display = 'flex';
+}
 
 /**
  * @description Toggle the navigation menu in smaller displays
@@ -139,6 +174,18 @@ for (let i = 0; i < projectsThumbnails.length; i += 1) {
  * When the exit "X" sign is clicked, close the project's preview page
  */
  previewExitSign.addEventListener('click', exitProjectPreview);
+
+
+/**
+ * When the right arrow is clicked, switch to next project
+ */
+playNextVideo.addEventListener('click', () => switchProject(1));
+
+
+/**
+ * When the left arrow is clicked, switch to previous project
+ */
+ playPrevVideo.addEventListener('click', () => switchProject(-1));
 
 
 /** Mobile-specific event handlers */
