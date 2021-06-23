@@ -10,6 +10,7 @@ const mobileNav = document.getElementsByClassName('toggle-nav').item(0);
 const navToggler = document.getElementsByClassName('navbar-toggler').item(0);
 const navMenu = document.getElementsByClassName('nav-menu').item(0);
 const mainSection = document.getElementsByClassName('main-section').item(0);
+const resumeSections = document.getElementsByClassName('resume-itm');
 const imgIcon = document.getElementsByClassName('img-icon').item(0);
 const imgContainer = document.getElementsByClassName('img-container').item(0);
 const activeImg = document.getElementsByClassName('active-img').item(0);
@@ -33,18 +34,12 @@ let currentDescriptionIndex = '';
 
 
 /**
- * @description Change the styling of a navigation item
- * when it's clicked
- * @param {Event} event An event object that's based on the main Event interface,
- * and has properties specific to the dispatched event
+ * @description Given a specified anchor element, activate it along with its parent list item,
+ * and make sure to deactivate any previously activated navigation items
+ * @param {HTMLElement} specifiedAnchor The anchor element that should be activated 
  */
-
-function activateNavItem(event) {
-    const clickedAnchor = event.target;
-    if (document.body.clientWidth < 850)
-        navMenu.style.display = 'none';
-
-    if (!clickedAnchor.classList.contains('active-nav-anchor')) {
+function activateNavItem(specifiedAnchor) {
+    if (!specifiedAnchor.classList.contains('active-nav-anchor')) {
         for (let i = 0; i < navItems.children.length; i += 1) {
             const currentListItem = navItems.children.item(i);
 
@@ -60,12 +55,36 @@ function activateNavItem(event) {
                 break;
             }
         }
-        clickedAnchor.classList.add('active-nav-anchor');
-        clickedAnchor.parentElement.classList.add('active-nav-item');
-
+        specifiedAnchor.classList.add('active-nav-anchor');
+        specifiedAnchor.parentElement.classList.add('active-nav-item');
     }
 }
 
+
+/**
+ * @description Check to determine which section is currently in the viewport,
+ * and activate that section's navigation item in the navigation bar
+ */
+function activateNavOnScrolling() {
+    const windowPosition = window.scrollY;
+    let sectionIndex;
+
+    for (let i = 0; i < resumeSections.length; i += 1) {
+        const sectionOffset = resumeSections.item(i).offsetTop;
+        const sectionHeight = resumeSections.item(i).offsetHeight;
+        if (sectionOffset <= windowPosition && (sectionOffset + sectionHeight) > windowPosition) {
+            sectionIndex = i;
+            break;
+        }
+    }
+
+    const currentSectionID = resumeSections.item(sectionIndex).id;
+    const selector = `a[href='#${currentSectionID}']`;
+    const currentSectionsAnchor = document.querySelector(selector);
+
+    activateNavItem(currentSectionsAnchor);
+
+}
 
 
 /**
@@ -74,7 +93,6 @@ function activateNavItem(event) {
  * @param {Event} event An event object that's based on the main Event interface,
  * and has properties specific to the dispatched event
  */
-
 function previewProject(event) {
     const clickedThumbnail = event.target;
     const projectID = clickedThumbnail.id;
@@ -101,7 +119,6 @@ function previewProject(event) {
 /**
  * @description When the exit "X" sign is clicked, close the preview page and return to the portfolio
  */
-
 function exitProjectPreview() {
     if (prevContainer) {
         prevContainer.style.display = 'none';
@@ -118,8 +135,8 @@ function exitProjectPreview() {
  */
 function switchProject(indexIncrementer) {
     currentDescriptionIndex += indexIncrementer;
-    currentDescriptionIndex = currentDescriptionIndex == projectsThumbnails.length ? 0 
-    : currentDescriptionIndex < 0 ? projectsThumbnails.length - 1 : currentDescriptionIndex;
+    currentDescriptionIndex = currentDescriptionIndex == projectsThumbnails.length ? 0
+        : currentDescriptionIndex < 0 ? projectsThumbnails.length - 1 : currentDescriptionIndex;
 
     const newProjectThumbnail = projectsThumbnails.item(currentDescriptionIndex);
 
@@ -132,10 +149,10 @@ function switchProject(indexIncrementer) {
     projectDescription.style.display = 'flex';
 }
 
+
 /**
  * @description Toggle the navigation menu in smaller displays
  */
-
 function toggleMobileNavBar() {
     navMenu.style.display = navMenu.style.display == 'none' ? 'flex' : 'none';
 }
@@ -146,14 +163,20 @@ function toggleMobileNavBar() {
  */
 
 
+document.addEventListener('scroll', activateNavOnScrolling);
+
 /** Desktop-specific event handlers */
 
 /**
  * When a navigation item is clicked, change its color and its background
  */
-for (let i = 0; i < navItems.children.length; i += 1) {
-    const currentAnchor = navItems.children.item(i).children.item(0);
-    currentAnchor.addEventListener('click', activateNavItem);
+if (document.body.clientWidth > 850) {
+    for (let i = 0; i < navItems.children.length; i += 1) {
+        const currentAnchor = navItems.children.item(i).children.item(0);
+        currentAnchor.addEventListener('click', (event) => {
+            activateNavItem(event.target);
+        });
+    }
 }
 
 /**
@@ -173,7 +196,7 @@ for (let i = 0; i < projectsThumbnails.length; i += 1) {
 /**
  * When the exit "X" sign is clicked, close the project's preview page
  */
- previewExitSign.addEventListener('click', exitProjectPreview);
+previewExitSign.addEventListener('click', exitProjectPreview);
 
 
 /**
@@ -185,7 +208,7 @@ playNextVideo.addEventListener('click', () => switchProject(1));
 /**
  * When the left arrow is clicked, switch to previous project
  */
- playPrevVideo.addEventListener('click', () => switchProject(-1));
+playPrevVideo.addEventListener('click', () => switchProject(-1));
 
 
 /** Mobile-specific event handlers */
