@@ -22,7 +22,22 @@ const playPrevVideo = document.getElementsByClassName('lArrow').item(0);
 const projectDescriptionContainer = document.getElementsByClassName('project-description').item(0);
 const currentProjectTitle = document.getElementsByClassName('project-title').item(0);
 const videoPlayer = document.getElementsByClassName('video-player').item(0);
+const ToggleModeContainer = document.getElementsByClassName('toggle-mode-container').item(0);
+const modeSwitchBtn = document.getElementsByClassName('mode-switch').item(0);
+const currentMode = document.getElementsByClassName('current-mode').item(0);
 
+const colorPalette = {
+    light: {
+        primary: '#f8f1f1',
+        secondary: '#459996',
+        nav: '#a3d2ca'
+    },
+    dark: {
+        primary: '#1B262C',
+        secondary: '#BBE1FA',
+        nav: '#0F4C75'
+    }
+};
 
 let prevContainer = '';
 let projectDescription = '';
@@ -32,6 +47,36 @@ let currentDescriptionIndex = '';
  * Helper Functions
  */
 
+/**
+ * @description Switch the color mode,
+ * while smoothly changing the position and color of the toggler
+ */
+function switchColorModes() {
+    if (modeSwitchBtn.classList.contains('active-dark')) {
+        modeSwitchBtn.classList.remove('active-dark');
+        modeSwitchBtn.classList.add('active-light');
+        currentMode.classList.remove('active-dark-text');
+        currentMode.classList.add('active-light-text');
+        currentMode.textContent = 'Light';
+        setTimeout(() => {
+            document.documentElement.style.setProperty('--primary-bg', colorPalette.light.primary);
+            document.documentElement.style.setProperty('--nav-bg', colorPalette.light.nav);
+            document.documentElement.style.setProperty('--txt-color', colorPalette.light.secondary);
+        }, 500);
+
+    } else {
+        modeSwitchBtn.classList.remove('active-light');
+        modeSwitchBtn.classList.add('active-dark');
+        currentMode.classList.remove('active-light-text');
+        currentMode.classList.add('active-dark-text');
+        currentMode.textContent = 'Dark';
+        setTimeout(() => {
+            document.documentElement.style.setProperty('--primary-bg', colorPalette.dark.primary);
+            document.documentElement.style.setProperty('--nav-bg', colorPalette.dark.nav);
+            document.documentElement.style.setProperty('--txt-color', colorPalette.dark.secondary);
+        }, 500);
+    }
+}
 
 /**
  * @description Given a specified anchor element, activate it along with its parent list item,
@@ -166,6 +211,11 @@ function toggleMobileNavBar() {
 document.addEventListener('scroll', activateNavOnScrolling);
 
 /** Desktop-specific event handlers */
+
+/**
+ * Switch color modes
+ */
+modeSwitchBtn.addEventListener('click', switchColorModes);
 
 /**
  * When a navigation item is clicked, change its color and its background
