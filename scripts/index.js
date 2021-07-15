@@ -39,6 +39,7 @@ const colorPalette = {
     }
 };
 
+let lastActivatedSection = '';
 let prevContainer = '';
 let projectDescription = '';
 let currentDescriptionIndex = '';
@@ -112,18 +113,28 @@ function activateNavItem(specifiedAnchor) {
  */
 function activateNavOnScrolling() {
     const windowPosition = window.scrollY;
+
+    let sectionOffset = lastActivatedSection.offsetTop;
+    let sectionHeight = lastActivatedSection.offsetHeight;
     let sectionIndex;
 
+    /**
+     * Check whether the latest activated section is still in the viewport,
+     * if so, then termine, because executing the code would be useful only when the section changes.
+     */
+    if (sectionOffset <= windowPosition && (sectionOffset + sectionHeight) > windowPosition)
+        return;
+
     for (let i = 0; i < resumeSections.length; i += 1) {
-        const sectionOffset = resumeSections.item(i).offsetTop;
-        const sectionHeight = resumeSections.item(i).offsetHeight;
+        sectionOffset = resumeSections.item(i).offsetTop;
+        sectionHeight = resumeSections.item(i).offsetHeight;
         if (sectionOffset <= windowPosition && (sectionOffset + sectionHeight) > windowPosition) {
             sectionIndex = i;
             break;
         }
     }
-
-    const currentSectionID = resumeSections.item(sectionIndex).id;
+    lastActivatedSection = resumeSections.item(sectionIndex);
+    const currentSectionID = lastActivatedSection.id;
     const selector = `a[href='#${currentSectionID}']`;
     const currentSectionsAnchor = document.querySelector(selector);
 
