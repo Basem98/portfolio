@@ -404,6 +404,45 @@ li {
     cursor: pointer;
 }
 
+#education {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.edu-item {
+    padding: 1rem 0 1rem 0;
+}
+
+.edu-section-header {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--special-txt);
+    padding: 2rem 0 2rem 0;
+}
+
+.edu-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.study-period {
+    color: var(--special-txt);
+    font-size: 1.6rem;
+}
+
+.degree, .gpa {
+    font-size: 1.6rem;
+}
+
+.school {
+    font-size: 1.8rem;
+    font-weight: 600;
+
+}
+
 
 /* Desktop-specific styling rules */
 
@@ -596,11 +635,16 @@ li {
         animation: 7s ease-in-out 1 slide-from-right;
     }
 
-
     .projects-container img {
         width: 30rem;
         height: 15rem;
         margin: 5rem;
+    }
+
+    .edu-header {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
     }
 
 }
