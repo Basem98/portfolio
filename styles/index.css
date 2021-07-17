@@ -49,6 +49,8 @@ p {
 }
 
 .toggle-mode-container {
+    position: absolute;
+    top: 0;
     background: var(--primary-bg);
     width: 6rem;
     height: 2rem;
@@ -495,6 +497,7 @@ li {
 
     .toggle-mode-container {
         margin: auto;
+        position: static;
     }
     .toggle-nav {
         z-index: 99;
