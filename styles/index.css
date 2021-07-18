@@ -425,7 +425,7 @@ li {
     padding: 1rem 0 1rem 0;
 }
 
-.edu-section-header {
+.section-header {
     font-size: 2rem;
     font-weight: 600;
     color: var(--special-txt);
@@ -451,7 +451,22 @@ li {
 .school {
     font-size: 1.8rem;
     font-weight: 600;
+}
 
+.skills-subsec {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.skill-icon {
+    width: 5rem;
+    height: 5rem;
+    margin: 0.5rem 2rem 0.5rem 0rem;
+}
+
+.skill-icon path {
+    fill: var(--txt-color);
 }
 
 
