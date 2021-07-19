@@ -428,7 +428,8 @@ li {
 .section-header {
     font-size: 2rem;
     font-weight: 600;
-    color: var(--special-txt);
+    /* color: var(--special-txt); */
+    color: var(--txt-color);
     padding: 2rem 0 2rem 0;
 }
 
