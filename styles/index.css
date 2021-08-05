@@ -233,13 +233,6 @@ li {
     animation: 1s ease-in-out 1 wobble-horizontal;
 }
 
-.story-anch {
-    display: inline-block;
-    text-decoration: none;
-    animation: 3s ease-in-out infinite wobble-vertical;
-}
-
-
 #projects {
     padding: 4.8rem !important;
 }
@@ -468,6 +461,13 @@ li {
 
 .skill-icon path {
     fill: var(--txt-color);
+}
+
+.quote-header {
+    font-style: italic;
+    text-align: center;
+    color: var(--special-txt);
+    font-size: 1.6rem;
 }
 
 

@@ -24,32 +24,6 @@
     }
 }
 
-/* Make a block wobble vertically */
-
-@keyframes wobble-vertical {
-    8% {
-        transform: translateY(-8px);
-    }
-    16% {
-        transform: translateY(6px);
-    }
-    24% {
-        transform: translateY(-4px);
-    }
-    32% {
-        transform: translateY(3px);
-    }
-    40% {
-        transform: translateY(-2px);
-    }
-    48% {
-        transform: translateY(0px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
-}
-
 /* 
  * Make a block drop from the top of the browser window
  * with a little wobble effect at the end 
