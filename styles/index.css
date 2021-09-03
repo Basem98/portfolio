@@ -669,6 +669,25 @@ li {
         margin: 5rem;
     }
 
+    .project-title {
+        font-size: 1.8rem !important;
+    }
+
+
+    .project-preview video {
+        width: 24rem;
+        height: 18rem;
+    }
+
+
+    .arrow {
+        padding: 1rem;
+    }
+    
+    .links-container div {
+        padding: 1rem;
+    }
+
     .edu-header {
         display: flex;
         flex-direction: column;
