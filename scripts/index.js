@@ -13,10 +13,11 @@ const mainSection = document.getElementsByClassName('main-section').item(0);
 const resumeSections = document.getElementsByClassName('resume-itm');
 const imgIcon = document.getElementsByClassName('img-icon').item(0);
 const imgContainer = document.getElementsByClassName('img-container').item(0);
+const closeImg = document.getElementsByClassName('close-img').item(0);
 const activeImg = document.getElementsByClassName('active-img').item(0);
 const projectsContainer = document.getElementsByClassName('projects-container').item(0);
 const projectsThumbnails = projectsContainer.getElementsByTagName('img');
-const previewExitSign = document.getElementsByClassName('exit-sign').item(0);
+const previewExitSign = document.getElementsByClassName('close-preview').item(0);
 const playNextVideo = document.getElementsByClassName('rArrow').item(0);
 const playPrevVideo = document.getElementsByClassName('lArrow').item(0);
 const projectDescriptionContainer = document.getElementsByClassName('project-description').item(0);
@@ -295,9 +296,10 @@ if (document.body.clientWidth < 850)
 imgIcon.addEventListener('click', () => {
     imgContainer.style.display = 'flex';
     activeImg.classList.add('animated-img');
-    setTimeout(() => {
-        activeImg.classList.remove('animated-img');
-        imgContainer.style.display = 'none';
-    }, 8000);
+});
+
+closeImg.addEventListener('click', () => {
+    activeImg.classList.remove('animated-img');
+    imgContainer.style.display = 'none';
 });
 

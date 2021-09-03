@@ -562,6 +562,10 @@ li {
         display: none;
     }
 
+    .close-img {
+        background: rgba(0, 0, 0, 0.6);
+    }
+
     .active-img {
         position: fixed;
         top: 0.5em;
@@ -573,7 +577,7 @@ li {
     }
 
     .animated-img {
-        animation: 3s ease-in-out scale-to-center, 3s ease-in-out 5s reverse scale-to-center;
+        animation: 1s ease-in-out scale-to-center;
         animation-fill-mode: forwards;
     }
 
