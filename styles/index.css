@@ -33,6 +33,11 @@ p {
     max-width: 120ch;
     line-height: 2.5rem;
 }
+
+li {
+    max-width: 120ch;
+}
+
 .nav-items {
     width: 100%;
 }
@@ -420,35 +425,39 @@ li {
     justify-content: space-evenly;
 }
 
-.edu-item {
+.subitem {
     padding: 1rem 0 1rem 0;
+    margin: 2rem 0 1rem 0;
+}
+
+.subitem li {
+    margin: 1rem 0 1rem 0;
 }
 
 .section-header {
     font-size: 2rem;
     font-weight: 600;
-    /* color: var(--special-txt); */
     color: var(--txt-color);
     padding: 2rem 0 2rem 0;
 }
 
-.edu-header {
+.subitem-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-.study-period {
+.period {
     color: var(--special-txt);
     font-size: 1.6rem;
 }
 
-.degree, .gpa {
+.subheader, .gpa {
     font-size: 1.6rem;
 }
 
-.school {
+.subitem-title {
     font-size: 1.8rem;
     font-weight: 600;
 }
@@ -474,6 +483,11 @@ li {
     text-align: center;
     color: var(--special-txt);
     font-size: 1.6rem;
+}
+
+.note-section {
+    font-size: 1.6rem;
+    margin-top: 3rem;
 }
 
 
@@ -698,7 +712,7 @@ li {
         padding: 1rem;
     }
 
-    .edu-header {
+    .subitem-header {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
