@@ -276,6 +276,7 @@ li {
 
 .projects-container div:hover {
     transform: scale(1.03);
+    cursor: pointer;
 }
 
 .projects-container div:active {
@@ -378,17 +379,24 @@ li {
     margin: 4rem 0 8rem 0;
 }
 
-.links-container div {
+.links-container a {
+    display: inline-block;
     background: var(--special-txt);
     padding: 1.5rem;
     border-radius: 0.5rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-}
-
-.links-container a {
     text-decoration: none;
     color: var(--primary-bg);
     font-weight: 600;
+}
+
+.links-container a:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.links-container a:active {
+    transform: scale(0.97);
 }
 
 .project-description {
