@@ -150,6 +150,11 @@ li {
     margin-right: 1em;
 }
 
+.social-icon:hover {
+    animation: 1s ease-in-out wobble-vertical;
+
+}
+
 .icon-svg {
     fill: var(--txt-color);
     transition: transform 0.1s ease-in-out, fill 0.1s ease-in-out;
