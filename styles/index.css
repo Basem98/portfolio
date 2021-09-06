@@ -498,6 +498,15 @@ li {
     margin-top: 3rem;
 }
 
+.quote-container {
+    font-style: italic;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 2rem;
+}
+
 
 /* Desktop-specific styling rules */
 
