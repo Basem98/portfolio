@@ -10,6 +10,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 * {
@@ -21,10 +22,8 @@ html {
 body {
     background-color: var(--primary-bg);
     color: var(--txt-color);
-    margin: 0px;
     height: 100vh;
     width: 100vw;
-    max-width: 100vw;
     overflow-x: hidden;
     font-size: 1.8rem;
     font-family: 'Roboto', sans-serif;
@@ -551,9 +550,6 @@ li {
 /* Mobile-specific styling rules */
 
 @media only screen and (max-width: 850px) {
-    body {
-        margin: 0 !important;
-    }
     main {
         display: block;
     }
@@ -595,8 +591,8 @@ li {
 
     .img-container {
         position: fixed;
-        height: 100vh;
-        width: 100vw;
+        height: 100%;
+        width: 100%;
         z-index: 99;
         background: rgba(0, 0, 0, 0.8);
         display: flex;
