@@ -113,8 +113,10 @@ function activateNavItem(specifiedAnchor) {
  * and activate that section's navigation item in the navigation bar
  */
 function activateNavOnScrolling() {
-    const windowPosition = window.scrollY;
-
+    /**
+     * Get the current viewport position, and keep double the height of the mobile navigation bar in mind
+     */
+    const windowPosition = window.scrollY + 2 * navToggler.clientHeight;
     let sectionOffset = lastActivatedSection.offsetTop;
     let sectionHeight = lastActivatedSection.offsetHeight;
     let sectionIndex;
