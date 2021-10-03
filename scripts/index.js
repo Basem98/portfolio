@@ -297,7 +297,7 @@ if (document.body.clientWidth < 850) {
      */
     document.addEventListener('DOMContentLoaded', () => {
         const navBarTogglerHeight = window.getComputedStyle(mobileNav).height;
-        navMenu.style.top = `${parseInt(navBarTogglerHeight) - 1}px`;
+        navMenu.style.top = `${parseInt(navBarTogglerHeight) - 5}px`;
         mainSection.style.top = navBarTogglerHeight;
     });
     /**
