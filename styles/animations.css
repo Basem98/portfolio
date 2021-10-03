@@ -64,7 +64,7 @@
     }
 }
 
-/* Make a block drop 50 pixels from its original position */
+/* Make a block drop 50 pixels from its original position and wobble */
 
 @keyframes drop-down {
     0% {
@@ -81,6 +81,49 @@
     }
     100% {
         transform: translateY(0px);
+    }
+}
+
+/* Add a dropdown effect to the mobile navigation bar */
+@keyframes dropdown-nav {
+    0% {
+        transform: translateY(-250px);
+    }
+    20% {
+        transform: translateY(-200px);
+    }
+    40% {
+        transform: translateY(-150px);
+    }
+    60% {
+        transform: translateY(-100px);
+    }
+    80% {
+        transform: translateY(-50px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes fold-top {
+    0% {
+        transform: translateY(0);
+    }
+    20% {
+        transform: translateY(-50px);
+    }
+    40% {
+        transform: translateY(-100px);
+    }
+    60% {
+        transform: translateY(-150px);
+    }
+    80% {
+        transform: translateY(-200px);
+    }
+    100% {
+        transform: translateY(-250px);
     }
 }
 

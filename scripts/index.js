@@ -213,7 +213,15 @@ function switchProject(indexIncrementer) {
  * @description Toggle the navigation menu in smaller displays
  */
 function toggleMobileNavBar() {
-    navMenu.style.display = navMenu.style.display == 'none' ? 'flex' : 'none';
+    if (navMenu.style.display == 'flex') {
+        navMenu.classList.add('inactive-nav-menu');
+        setTimeout(() => {
+        navMenu.classList.remove('inactive-nav-menu');
+        navMenu.style.display = 'none';
+        }, 300);
+    } else {
+        navMenu.style.display = 'flex';
+    }
 }
 
 
