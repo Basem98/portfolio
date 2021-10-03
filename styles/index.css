@@ -654,11 +654,13 @@ li {
         padding: 0.1rem 3rem 0.1rem 3rem;
         text-align: center;
         background-color: var(--nav-bg);
-        border: none;
-        outline: var(--txt-color);
+        border: 1px groove var(--txt-color);
         font-size: 3.2rem;
         color: var(--txt-color);
-        transition: background-color 0.1s ease, color 0.1s ease;
+    }
+
+    .navbar-toggler:active {
+        transform: scale(0.9);
     }
 
     .social-icons {
