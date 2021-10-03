@@ -287,18 +287,22 @@ playPrevVideo.addEventListener('click', () => switchProject(-1));
 
 /** Mobile-specific event handlers */
 
-/**
- * Set the position of the hidden navigation menu and the main section,
- * based on the position of the fixed navigation bar toggler,
- * only when the DOM content is loaded.
- * This is a mobile-specific event listener!
- */
+
 if (document.body.clientWidth < 850) {
+    /**
+     * Set the position of the hidden navigation menu and the main section,
+     * based on the position of the fixed navigation bar toggler,
+     * only when the DOM content is loaded.
+     * This is a mobile-specific event listener!
+     */
     document.addEventListener('DOMContentLoaded', () => {
         const navBarTogglerHeight = window.getComputedStyle(mobileNav).height;
-        navMenu.style.top = navBarTogglerHeight;
+        navMenu.style.top = `${parseInt(navBarTogglerHeight) - 1}px`;
         mainSection.style.top = navBarTogglerHeight;
     });
+    /**
+     * Fold the navbar, whenever the user clicks out of it
+     */
     mainSection.addEventListener('click', () => {
         navMenu.classList.add('inactive-nav-menu');
         setTimeout(() => {
