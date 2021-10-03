@@ -631,10 +631,6 @@ li {
         transition: transform 0.5s ease-in-out;
     }
 
-    .img-icon:hover {
-        transform: scale(1.2);
-    }
-
     .mobile-nav-header {
         display: flex;
         flex-direction: row;
@@ -663,11 +659,6 @@ li {
         font-size: 3.2rem;
         color: var(--txt-color);
         transition: background-color 0.1s ease, color 0.1s ease;
-    }
-
-    .navbar-toggler:hover {
-        background-color: var(--txt-color);
-        color: var(--nav-bg);
     }
 
     .social-icons {
