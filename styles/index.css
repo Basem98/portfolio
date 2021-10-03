@@ -551,6 +551,9 @@ li {
 /* Mobile-specific styling rules */
 
 @media only screen and (max-width: 850px) {
+    body {
+        margin: 0 !important;
+    }
     main {
         display: block;
     }
@@ -702,7 +705,7 @@ li {
     }
 
     .projects-container img {
-        margin: 5rem;
+        margin: 0rem;
     }
 
     .project-title {
