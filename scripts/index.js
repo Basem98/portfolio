@@ -293,12 +293,21 @@ playPrevVideo.addEventListener('click', () => switchProject(-1));
  * only when the DOM content is loaded.
  * This is a mobile-specific event listener!
  */
-if (document.body.clientWidth < 850)
+if (document.body.clientWidth < 850) {
     document.addEventListener('DOMContentLoaded', () => {
         const navBarTogglerHeight = window.getComputedStyle(mobileNav).height;
         navMenu.style.top = navBarTogglerHeight;
         mainSection.style.top = navBarTogglerHeight;
     });
+    mainSection.addEventListener('click', () => {
+        navMenu.classList.add('inactive-nav-menu');
+        setTimeout(() => {
+            navMenu.style.display = 'none';
+            navMenu.classList.remove('inactive-nav-menu');
+        }, 300);
+    });
+}
+
 
 
 /**
