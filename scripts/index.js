@@ -229,7 +229,9 @@ document.addEventListener('scroll', activateNavOnScrolling);
 /**
  * Switch color modes
  */
-modeSwitchBtn.addEventListener('click', switchColorModes);
+// modeSwitchBtn.addEventListener('click', switchColorModes);
+ToggleModeContainer.addEventListener('click', switchColorModes);
+
 
 /**
  * When a navigation item is clicked, change its color and its background
