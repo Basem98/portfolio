@@ -217,13 +217,13 @@ li {
 
 .first-name {
     display: inline-block;
-    animation: 1.9s ease-in-out 1 drop-from-top, 1s ease 1 2.55s slide-left;
+    animation: 2s ease-in-out 1 wobble-from-top, 1s ease 1 2.55s wobble-left;
 }
 
 .last-name {
     display: inline-block;
     color: var(--special-txt);
-    animation: 7s ease-in-out 1 slide-from-right;
+    animation: 7s ease-in-out 1 wobble-from-right;
 }
 
 .subheading {
@@ -231,7 +231,7 @@ li {
     font-size: 1.8rem;
     font-weight: 550;
     margin-bottom: 4em;
-    animation: 1s ease-in-out 1 1.22s drop-down;
+    animation: 1s ease-in-out 1 1.25s wobble-down;
 }
 
 .mail-anch {
@@ -513,7 +513,7 @@ li {
 
 /* Desktop-specific styling rules */
 
-@media screen and (min-width: 851px) {
+@media screen and (min-width: 901px) {
     main {
         display: flex;
         flex-direction: row;
@@ -549,7 +549,22 @@ li {
 
 /* Mobile-specific styling rules */
 
-@media only screen and (max-width: 850px) {
+@media screen and (max-width: 450px) {
+    
+    .first-name {
+        display: inline-block;
+        animation: 1.9s ease-in-out 1 wobble-from-top
+    }
+
+    .last-name {
+        display: inline-block;
+        color: var(--special-txt);
+        animation: 7s ease-in-out 1 wobble-from-right;
+    }
+
+}
+
+@media only screen and (max-width: 900px) {
     main {
         display: block;
     }
@@ -695,18 +710,6 @@ li {
         font-size: 1.6rem;
     }
 
-
-    .first-name {
-        display: inline-block;
-        animation: 1.9s ease-in-out 1 drop-from-top
-    }
-
-    .last-name {
-        display: inline-block;
-        color: var(--special-txt);
-        animation: 7s ease-in-out 1 slide-from-right;
-    }
-
     .projects-container img {
         margin: 2rem;
     }
@@ -769,18 +772,18 @@ li {
     }
 
 }
-
+/* 
 @media screen and (min-width: 750px) {
 
     .first-name {
         display: inline-block;
-        animation: 1.9s ease-in-out 1 drop-from-top, 1s ease 1 2.55s slide-left;
+        animation: 1.9s ease-in-out 1 wobble-from-top, 1s ease 1 2.55s wobble-left;
     }
     
     .last-name {
         display: inline-block;
         color: var(--special-txt);
-        animation: 7s ease-in-out 1 slide-from-right;
+        animation: 7s ease-in-out 1 wobble-from-right;
     }
     
-}
+} */

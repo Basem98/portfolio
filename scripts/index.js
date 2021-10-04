@@ -288,7 +288,7 @@ playPrevVideo.addEventListener('click', () => switchProject(-1));
 /** Mobile-specific event handlers */
 
 
-if (document.body.clientWidth < 850) {
+if (document.body.clientWidth < 900) {
     /**
      * Set the position of the hidden navigation menu and the main section,
      * based on the position of the fixed navigation bar toggler,

@@ -52,12 +52,15 @@
  * with a little wobble effect at the end 
  */
 
-@keyframes drop-from-top {
+@keyframes wobble-from-top {
     0% {
         transform: translateY(-1000px);
     }
-    75% {
-        transform: translateY(42px);
+    30% {
+        transform: translateY(-500px);
+    }
+    80% {
+        transform: translateY(65px);
     }
     100% {
         transform: translateY(0);
@@ -66,7 +69,7 @@
 
 /* Make a block drop 50 pixels from its original position and wobble */
 
-@keyframes drop-down {
+@keyframes wobble-down {
     0% {
         transform: translateY(0px);
     }
@@ -74,7 +77,7 @@
         transform: translateY(50px);
     }
     70% {
-        transform: translateY(-10px);
+        transform: translateY(-3px);
     }
     90% {
         transform: translateY(5px);
@@ -132,7 +135,7 @@
  * eventually creating a wobble effect at the end
  */
 
-@keyframes slide-from-right {
+@keyframes wobble-from-right {
     0% {
         transform: translateX(5000px);
     }
@@ -161,7 +164,7 @@
  * moving more to the left side as if its right side was hit by something
  */
 
-@keyframes slide-left {
+@keyframes wobble-left {
     0% {
         transform: translateX(0px);
     }
