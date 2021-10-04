@@ -772,18 +772,3 @@ li {
     }
 
 }
-/* 
-@media screen and (min-width: 750px) {
-
-    .first-name {
-        display: inline-block;
-        animation: 1.9s ease-in-out 1 wobble-from-top, 1s ease 1 2.55s wobble-left;
-    }
-    
-    .last-name {
-        display: inline-block;
-        color: var(--special-txt);
-        animation: 7s ease-in-out 1 wobble-from-right;
-    }
-    
-} */
