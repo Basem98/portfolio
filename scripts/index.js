@@ -54,30 +54,22 @@ let currentDescriptionIndex = '';
  * while smoothly changing the position and color of the toggler
  */
 function switchColorModes() {
+    let oldMode = 'light';
+    let newMode = 'dark';
     if (modeSwitchBtn.classList.contains('active-dark')) {
-        modeSwitchBtn.classList.remove('active-dark');
-        modeSwitchBtn.classList.add('active-light');
-        currentMode.classList.remove('active-dark-text');
-        currentMode.classList.add('active-light-text');
-        currentMode.textContent = 'Light';
-        setTimeout(() => {
-            document.documentElement.style.setProperty('--primary-bg', colorPalette.light.primary);
-            document.documentElement.style.setProperty('--nav-bg', colorPalette.light.nav);
-            document.documentElement.style.setProperty('--txt-color', colorPalette.light.secondary);
-        }, 500);
-
-    } else {
-        modeSwitchBtn.classList.remove('active-light');
-        modeSwitchBtn.classList.add('active-dark');
-        currentMode.classList.remove('active-light-text');
-        currentMode.classList.add('active-dark-text');
-        currentMode.textContent = 'Dark';
-        setTimeout(() => {
-            document.documentElement.style.setProperty('--primary-bg', colorPalette.dark.primary);
-            document.documentElement.style.setProperty('--nav-bg', colorPalette.dark.nav);
-            document.documentElement.style.setProperty('--txt-color', colorPalette.dark.secondary);
-        }, 500);
+        oldMode = 'dark';
+        newMode = 'light';
     }
+    currentMode.textContent = `${newMode.charAt(0).toUpperCase()}${newMode.slice(1)}`;
+    modeSwitchBtn.classList.remove(`active-${oldMode}`);
+    modeSwitchBtn.classList.add(`active-${newMode}`);
+    currentMode.classList.remove(`active-${oldMode}-text`);
+    currentMode.classList.add(`active-${newMode}-text`);
+    setTimeout(() => {
+        document.documentElement.style.setProperty('--primary-bg', colorPalette[newMode].primary);
+        document.documentElement.style.setProperty('--nav-bg', colorPalette[newMode].nav);
+        document.documentElement.style.setProperty('--txt-color', colorPalette[newMode].secondary);
+    }, 500);
 }
 
 /**
@@ -317,7 +309,7 @@ if (document.body.clientWidth < 900) {
         navItems.children.item(i).addEventListener('click', foldNavList);
     }
 
-    
+
     /**
     * When the user clicks the image icon,
     * Make it scale and move smoothly to the center of the display
