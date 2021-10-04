@@ -213,15 +213,21 @@ function switchProject(indexIncrementer) {
  * @description Toggle the navigation menu in smaller displays
  */
 function toggleMobileNavBar() {
-    if (navMenu.style.display == 'flex') {
-        navMenu.classList.add('inactive-nav-menu');
-        setTimeout(() => {
-        navMenu.classList.remove('inactive-nav-menu');
-        navMenu.style.display = 'none';
-        }, 300);
-    } else {
+    if (navMenu.style.display == 'flex')
+        foldNavList();
+    else
         navMenu.style.display = 'flex';
-    }
+}
+
+/**
+ * @description Fold the mobile navigation list 
+ */
+function foldNavList() {
+    navMenu.classList.add('inactive-nav-menu');
+    setTimeout(() => {
+        navMenu.style.display = 'none';
+        navMenu.classList.remove('inactive-nav-menu');
+    }, 300);
 }
 
 
@@ -301,16 +307,15 @@ if (document.body.clientWidth < 900) {
         mainSection.style.top = navBarTogglerHeight;
     });
     /**
-     * Fold the navbar, whenever the user clicks out of it
+     * Fold the navlist, whenever the user clicks out of it
      */
-    mainSection.addEventListener('click', () => {
-        navMenu.classList.add('inactive-nav-menu');
-        setTimeout(() => {
-            navMenu.style.display = 'none';
-            navMenu.classList.remove('inactive-nav-menu');
-        }, 300);
-    });
-}
+    mainSection.addEventListener('click', foldNavList);
+    /**
+     * Fold the navlist after a list item is clicked
+     */
+    for (let i = 0; i < navItems.children.length; i += 1) {
+        navItems.children.item(i).addEventListener('click', foldNavList);
+    }
 
 
 
