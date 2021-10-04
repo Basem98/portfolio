@@ -317,19 +317,25 @@ if (document.body.clientWidth < 900) {
         navItems.children.item(i).addEventListener('click', foldNavList);
     }
 
+    
+    /**
+    * When the user clicks the image icon,
+    * Make it scale and move smoothly to the center of the display
+    */
+    imgIcon.addEventListener('click', () => {
+        imgContainer.style.display = 'flex';
+        activeImg.classList.add('animated-img');
+    });
 
+    closeImg.addEventListener('click', () => {
+        activeImg.classList.remove('animated-img');
+        imgContainer.style.display = 'none';
+    });
 
-/**
- * When the user clicks the image icon,
- * Make it scale and move smoothly to the center of the display
- */
-imgIcon.addEventListener('click', () => {
-    imgContainer.style.display = 'flex';
-    activeImg.classList.add('animated-img');
-});
+    imgContainer.addEventListener('click', () => {
+        activeImg.classList.remove('animated-img');
+        imgContainer.style.display = 'none';
+    });
+}
 
-closeImg.addEventListener('click', () => {
-    activeImg.classList.remove('animated-img');
-    imgContainer.style.display = 'none';
-});
 
