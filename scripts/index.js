@@ -96,6 +96,7 @@ function activateNavItem(specifiedAnchor) {
         }
         specifiedAnchor.classList.add('active-nav-anchor');
         specifiedAnchor.parentElement.classList.add('active-nav-item');
+        // console.log(document.getElementById(specifiedAnchor.getAttribute('href').slice(1)).offsetTop - mobileNav.clientHeight)
     }
 }
 
@@ -108,11 +109,10 @@ function activateNavOnScrolling() {
     /**
      * Get the current viewport position, and keep double the height of the mobile navigation bar in mind
      */
-    const windowPosition = window.scrollY + 2 * navToggler.clientHeight;
+    const windowPosition = window.scrollY + mobileNav.clientHeight;
     let sectionOffset = lastActivatedSection.offsetTop;
     let sectionHeight = lastActivatedSection.offsetHeight;
     let sectionIndex;
-
     /**
      * Check whether the latest activated section is still in the viewport,
      * if so, then termine, because executing the code would be useful only when the section changes.
@@ -304,7 +304,14 @@ ToggleModeContainer.addEventListener('click', switchColorModes);
 for (let i = 0; i < navItems.children.length; i += 1) {
     const currentAnchor = navItems.children.item(i).children.item(0);
     currentAnchor.addEventListener('click', (event) => {
-        activateNavItem(event.target);
+        const clickedAnchor = event.target;
+        const selectedSection = document.getElementById(event.target.getAttribute('href').slice(1));
+        event.preventDefault();
+        activateNavItem(clickedAnchor);
+        window.scrollTo({
+            behavior: "smooth",
+            top: selectedSection.offsetTop - mobileNav.clientHeight
+        });
     });
 }
 
