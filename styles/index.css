@@ -549,7 +549,7 @@ li {
 
 /* Mobile-specific styling rules */
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 620px) {
     
     .first-name {
         display: inline-block;

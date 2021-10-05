@@ -211,6 +211,7 @@ function toggleMobileNavBar() {
         navMenu.style.display = 'flex';
 }
 
+
 /**
  * @description Fold the mobile navigation list 
  */
@@ -224,37 +225,95 @@ function foldNavList() {
 
 
 /**
+ * @description Set the position of the hidden navigation menu and the main section,
+ * based on the position of the fixed navigation bar toggler,
+ */
+function adjustNavPose() {
+    const navBarTogglerHeight = window.getComputedStyle(mobileNav).height;
+    navMenu.style.top = `${parseInt(navBarTogglerHeight) - 5}px`;
+    mainSection.style.top = navBarTogglerHeight;
+}
+
+
+/**
+ * @description Add some dynamic features that are either added or removed,
+ * whenever the display width changes and passes a set threshold
+ */
+function addMobileSpecificFeats() {
+    if (window.innerWidth <= 900) {
+        navMenu.style.display = navMenu.style.display == 'contents' ? 'none' : navMenu.style.display;
+
+        adjustNavPose();
+        /**
+         * Fold the navlist, whenever the user clicks out of it
+         */
+        mainSection.addEventListener('click', foldNavList);
+        /**
+         * Fold the navlist after a list item is clicked
+         */
+        for (let i = 0; i < navItems.children.length; i += 1) {
+            navItems.children.item(i).addEventListener('click', foldNavList);
+        }
+        /**
+        * When the user clicks the image icon,
+        * Make it scale and move smoothly to the center of the display
+        */
+        imgIcon.addEventListener('click', () => {
+            imgContainer.style.display = 'flex';
+            activeImg.classList.add('animated-img');
+        });
+
+        closeImg.addEventListener('click', () => {
+            activeImg.classList.remove('animated-img');
+            imgContainer.style.display = 'none';
+        });
+
+        imgContainer.addEventListener('click', () => {
+            activeImg.classList.remove('animated-img');
+            imgContainer.style.display = 'none';
+        });
+    } else {
+        navMenu.style.display = 'contents';
+        mainSection.removeEventListener('click', foldNavList);
+        for (let i = 0; i < navItems.children.length; i += 1) {
+            navItems.children.item(i).removeEventListener('click', foldNavList);
+        }
+        imgContainer.style.display = 'none';
+    }
+}
+
+
+/**
  * Events
  */
 
-
+/**
+ * Activate the navigation item associated with the section in the current viewport
+ */
 document.addEventListener('scroll', activateNavOnScrolling);
-
-/** Desktop-specific event handlers */
 
 /**
  * Switch color modes
  */
-// modeSwitchBtn.addEventListener('click', switchColorModes);
 ToggleModeContainer.addEventListener('click', switchColorModes);
 
 
 /**
  * When a navigation item is clicked, change its color and its background
  */
-if (document.body.clientWidth > 850) {
-    for (let i = 0; i < navItems.children.length; i += 1) {
-        const currentAnchor = navItems.children.item(i).children.item(0);
-        currentAnchor.addEventListener('click', (event) => {
-            activateNavItem(event.target);
-        });
-    }
+for (let i = 0; i < navItems.children.length; i += 1) {
+    const currentAnchor = navItems.children.item(i).children.item(0);
+    currentAnchor.addEventListener('click', (event) => {
+        activateNavItem(event.target);
+    });
 }
+
 
 /**
  * Toggle the navigation menu in smaller displays
  */
 navToggler.addEventListener('click', toggleMobileNavBar);
+
 
 /**
  * When a project thumbnail is clicked, open the preview page of that project
@@ -285,49 +344,9 @@ playPrevVideo.addEventListener('click', () => switchProject(-1));
 
 /** Mobile-specific event handlers */
 
+document.addEventListener('DOMContentLoaded', () => { 
+    adjustNavPose();
+    addMobileSpecificFeats();
+});
 
-if (document.body.clientWidth < 900) {
-    /**
-     * Set the position of the hidden navigation menu and the main section,
-     * based on the position of the fixed navigation bar toggler,
-     * only when the DOM content is loaded.
-     * This is a mobile-specific event listener!
-     */
-    document.addEventListener('DOMContentLoaded', () => {
-        const navBarTogglerHeight = window.getComputedStyle(mobileNav).height;
-        navMenu.style.top = `${parseInt(navBarTogglerHeight) - 5}px`;
-        mainSection.style.top = navBarTogglerHeight;
-    });
-    /**
-     * Fold the navlist, whenever the user clicks out of it
-     */
-    mainSection.addEventListener('click', foldNavList);
-    /**
-     * Fold the navlist after a list item is clicked
-     */
-    for (let i = 0; i < navItems.children.length; i += 1) {
-        navItems.children.item(i).addEventListener('click', foldNavList);
-    }
-
-
-    /**
-    * When the user clicks the image icon,
-    * Make it scale and move smoothly to the center of the display
-    */
-    imgIcon.addEventListener('click', () => {
-        imgContainer.style.display = 'flex';
-        activeImg.classList.add('animated-img');
-    });
-
-    closeImg.addEventListener('click', () => {
-        activeImg.classList.remove('animated-img');
-        imgContainer.style.display = 'none';
-    });
-
-    imgContainer.addEventListener('click', () => {
-        activeImg.classList.remove('animated-img');
-        imgContainer.style.display = 'none';
-    });
-}
-
-
+window.addEventListener('resize', addMobileSpecificFeats);
