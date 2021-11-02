@@ -96,7 +96,6 @@ function activateNavItem(specifiedAnchor) {
         }
         specifiedAnchor.classList.add('active-nav-anchor');
         specifiedAnchor.parentElement.classList.add('active-nav-item');
-        // console.log(document.getElementById(specifiedAnchor.getAttribute('href').slice(1)).offsetTop - mobileNav.clientHeight)
     }
 }
 
@@ -160,7 +159,7 @@ function previewProject(event) {
     projectDescription = document.getElementsByClassName(`${projectID}-desc`).item(0);
 
     currentProjectTitle.textContent = clickedThumbnail.alt;
-    videoPlayer.src = `${clickedThumbnail.src.slice(0, -4)}.m4v`;
+    videoPlayer.src = `${clickedThumbnail.src.slice(0, -4)}.mp4`;
     projectDescription.style.display = 'flex';
     prevContainer.style.display = 'flex';
     document.body.style.overflow = 'hidden';
@@ -194,7 +193,7 @@ function switchProject(indexIncrementer) {
     projectDescription.style.display = 'none';
 
     currentProjectTitle.textContent = newProjectThumbnail.alt;
-    videoPlayer.src = `${newProjectThumbnail.src.slice(0, -4)}.m4v`;
+    videoPlayer.src = `${newProjectThumbnail.src.slice(0, -4)}.mp4`;
 
     projectDescription = document.getElementsByClassName(`${newProjectThumbnail.id}-desc`).item(0);
     projectDescription.style.display = 'flex';
