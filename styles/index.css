@@ -196,10 +196,6 @@ li {
     text-align: center;
 }
 
-#about a {
-    color: var(--special-txt);
-}
-
 #about h1 {
     font-family: 'Playfair Display', sans-serif;
     font-size: 7.2rem;
@@ -235,14 +231,15 @@ li {
 }
 
 .mail-anch {
+    color: var(--txt-color);
     display: inline-block;
     text-decoration: none;
-    color: var(--special-txt);
-    transition: text-decoration 1s ease, transform 1s ease-in-out;
+    transition: text-decoration 1s ease, color 0.1s ease-out;
 }
 
 .mail-anch:hover {
     text-decoration: underline;
+    color: var(--special-txt);
     animation: 1s ease-in-out 1 wobble-horizontal;
 }
 
@@ -708,7 +705,7 @@ li {
     }
 
     .subheading {
-        margin-top: 2rem;
+        margin: 2rem 0 4rem 0;
         font-size: 1.6rem;
     }
 
