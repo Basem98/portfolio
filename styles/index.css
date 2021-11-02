@@ -344,8 +344,9 @@ li {
 .project-preview video {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 1);
     border-radius: 0.5rem;
-    width: 128rem;
-    height: 72rem;
+    width: 70%;
+    height: auto;
+    max-height: 72rem;
 }
 
 .arrow {
@@ -385,7 +386,8 @@ li {
 .links-container a {
     display: inline-block;
     background: var(--special-txt);
-    padding: 1.5rem;
+    padding: 1rem;
+    text-align: center;
     border-radius: 0.5rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     text-decoration: none;
@@ -718,13 +720,6 @@ li {
         font-size: 1.8rem !important;
     }
 
-
-    .project-preview video {
-        width: 24rem;
-        height: 18rem;
-    }
-
-
     .arrow {
         padding: 1rem;
     }
@@ -771,4 +766,7 @@ li {
         display: none;
     }
 
+    .links-container a {
+        margin: 0.5rem;
+    }
 }
