@@ -689,6 +689,7 @@ li {
 
     .social-icons {
         margin-top: 1em;
+        text-align: center;
     }
     
     .social-icon {
@@ -705,7 +706,7 @@ li {
     }
 
     .subheading {
-        margin: 2rem 0 4rem 0;
+        margin: 2rem 0 8rem 0;
         font-size: 1.6rem;
     }
 
