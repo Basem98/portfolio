@@ -255,11 +255,13 @@
 /* Scale the img-icon and move it to the center of the display */
 @keyframes scale-to-center {
     0% {
-        width: 4rem;
+        height: 5rem;
+        width: 5rem;
         transform: translate(0%, 0%);
     }
     100% {
-        width: 75%;
-        transform: translate(12.5%, 37.5%);
+        height: 80%;
+        width: 80%;
+        transform: translate(12.5%, 12.5%);
     }
 }
