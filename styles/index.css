@@ -347,6 +347,7 @@ li {
 }
 
 .project-preview {
+    margin-top: 2em;
     display: flex;
     justify-content: space-around;
     flex-direction: row;
