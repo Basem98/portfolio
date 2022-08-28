@@ -320,7 +320,7 @@
                                 <li>&#8226; <span>Formik</span> and <span>Yup</span> for the front-end data validation
                                 </li>
                                 <li>&#8226; <span>Redux Toolkit</span> for state management</li>
-                                <li>&#8226; <span>Axios</span> for the back-end</li>
+                                <li>&#8226; <span>Axios</span> for the back-end calls</li>
                                 <li>&#8226; <span>Google Maps API</span> for the geocoding and map preview</li>
                                 <li>&#8226; <span>Node.js</span> and <span>Express.js</span> for the server</li>
                                 <li>&#8226; <span>Cloudinary</span> and <span>Multer</span> for cloud storage
@@ -371,51 +371,27 @@
                         </div>
                         <div class="bmdb-desc">
                             <div class="links-container">
-                                <a href="https://github.com/Basem98/medical-appointments-website"
-                                    target="__blank">Codebase on
+                                <a href="https://github.com/Basem98/bmdb-react-movies" target="__blank">Codebase on
                                     GitHub</a>
+                                <a href="https://bmdb-react.netlify.app/" target="__blank">Go To Website</a>
                             </div>
                             <p>
                                 The web application was made using the following tools:
                             <ul>
-                                <li>&#8226; <span>React</span> and <span>CSS3</span> for the layout</li>
-                                <li>&#8226; Vanilla <span>JavaScript</span> for the interactivity and the functionality
-                                    of the entire UI</li>
-                                <li>&#8226; <span>Node.js</span> for the back-end</li>
-                                <li>&#8226; <span>Express.js</span> as the back-end framework used for building the API
-                                </li>
-                                <li>&#8226; <span>MongoDB</span> as the database for both the user accounts and the game
-                                    data</li>
+                                <li>&#8226; <span>React</span> and <span>Bootstrap</span> for the layout</li>
+                                <li>&#8226; <span>Redux</span> for state management</li>
+                                <li>&#8226; <span>Redux Thunk</span> for the redux store middleware</li>
+                                <li>&#8226; <span>Context API</span> for the language switching functionality</li>
+                                <li>&#8226; <span>Axios</span> for the back-end calls</li>
+                                <li>&#8226; <span>TMDB</span> 3rd party API for the movies data</li>
+                                <li>&#8226; <span>Netlify</span> for deployment</li>
                             </ul>
                             </p>
                             <p>
-                                Timesheet was my first attempt to actually use my development and overall programming
-                                skills
-                                to solve day-to-day real-life problems. This task-calculating app was a very helpful
-                                tool
-                                that I made when I was working as an Internet Assessor. When the assessment tasks
-                                numbers grew, it was
-                                confusing and hard to keep count of the type of each individual task, the average
-                                estimated time taken to finish it
-                                and the date of the task. Moreover, it was even harder to keep track of weekly and
-                                monthly counts by yourself.
-                                Thus, the Timesheet calculator idea occurred to me.
-                            </p>
-                            <p>
-                                I used Timesheet locally for reasons that go back to the contract with the company I
-                                worked for, but
-                                it's totally easy and hassle-free to deploy it somewhere and make it live. Timesheet was
-                                one of the first
-                                times when I was hit in the face by an epiphany, which made me realize the power of
-                                programming.
-                                No matter how hard a task is, as long as it's computable,
-                                you can figure out a way to tell the computer how to do it for you,
-                                achieving what <span>J. C. R. Licklider</span> once envisioned, which is a future where
-                                computers will
-                                set humans free from the burden of having to carry out any time-consuming and boring
-                                daily routine tasks
-                                that could be easily carried out by a computer, leaving more room for humans to dedicate
-                                for more creative tasks.
+                                BMDB is a UI to a movies database built using React & Bootstrap. It fetches the movies data from the TMDB 3rd party API using Axious, 
+                                then stores it in a Redux store to retrieve it later, while incorporating the thunk mechanism to implement paginate before fetching data.
+                                The project has a "favourites" feature that allows users to add/remove movies from their favourites list with a paginated preview.
+                                Context API was used to switch the language and the alignment based on the current language.
                             </p>
                         </div>
                         <div class="blasteroids-desc">
