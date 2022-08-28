@@ -418,11 +418,15 @@ li {
     color: var(--special-txt);
 }
 
-.word-game-desc, .landing-page-desc, .livechat-desc, .timesheet-desc, .blasteroids-desc {
+.word-game-desc, .landing-page-desc, .maw-desc, .bmdb-desc, .blasteroids-desc {
     display: none;
     width: 100%;
     flex-direction: column;
     align-items: center;
+}
+
+.word-game-desc li, .landing-page-desc li, .maw-desc li, .bmdb-desc li, .blasteroids-desc li {
+    margin: 10px 0;
 }
 
 .links-container div:hover {
