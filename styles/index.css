@@ -27,7 +27,7 @@ body {
     font-size: 1.8rem;
     font-family: 'Roboto', sans-serif;
 }
- 
+
 p {
     font-size: 1.8rem;
     max-width: 120ch;
@@ -98,6 +98,7 @@ li {
 .active-light-text {
     transform: translateX(0px);
 }
+
 .active-dark-text {
     transform: translateX(-20px);
 }
@@ -145,6 +146,18 @@ li {
 li {
     list-style: none;
     text-decoration: none;
+}
+
+.resume-link {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--special-txt);
+    margin-top: 1em;
+    font-size: 1.6rem;
+}
+
+.resume-link:hover {
+    text-decoration: underline;
 }
 
 .social-icons {
@@ -418,14 +431,22 @@ li {
     color: var(--special-txt);
 }
 
-.word-game-desc, .landing-page-desc, .maw-desc, .bmdb-desc, .blasteroids-desc {
+.word-game-desc,
+.landing-page-desc,
+.maw-desc,
+.bmdb-desc,
+.blasteroids-desc {
     display: none;
     width: 100%;
     flex-direction: column;
     align-items: center;
 }
 
-.word-game-desc li, .landing-page-desc li, .maw-desc li, .bmdb-desc li, .blasteroids-desc li {
+.word-game-desc li,
+.landing-page-desc li,
+.maw-desc li,
+.bmdb-desc li,
+.blasteroids-desc li {
     margin: 10px 0;
 }
 
@@ -468,7 +489,8 @@ li {
     font-size: 1.6rem;
 }
 
-.subheader, .gpa {
+.subheader,
+.gpa {
     font-size: 1.6rem;
 }
 
@@ -554,7 +576,7 @@ li {
 /* Mobile-specific styling rules */
 
 @media screen and (max-width: 620px) {
-    
+
     .first-name {
         display: inline-block;
         animation: 1.9s ease-in-out 1 wobble-from-top
@@ -583,6 +605,7 @@ li {
         margin: auto;
         position: static;
     }
+
     .toggle-nav {
         z-index: 99;
         position: fixed;
@@ -688,7 +711,7 @@ li {
         margin-top: 1em;
         text-align: center;
     }
-    
+
     .social-icon {
         width: 2.5rem;
         height: 2.5rem;
@@ -718,7 +741,7 @@ li {
     .arrow {
         padding: 1rem;
     }
-    
+
     .links-container div {
         padding: 1rem;
     }
