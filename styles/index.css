@@ -411,6 +411,17 @@ li {
     font-weight: 600;
 }
 
+.experience-subtitle a {
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--special-txt);
+}
+
+.experience-subtitle:hover {
+    text-decoration: underline;
+}
+
 .links-container a:hover {
     transform: scale(1.03);
     cursor: pointer;
