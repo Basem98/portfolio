@@ -193,7 +193,7 @@ li {
     padding: 3em;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-content: center;
     font-size: 1.6rem;
     border-bottom-width: 0.1rem;
@@ -208,6 +208,10 @@ li {
     align-self: flex-start;
     width: 100%;
     text-align: center;
+}
+
+#about {
+    justify-content: center;
 }
 
 #about h1 {
@@ -500,10 +504,26 @@ li {
     font-weight: 600;
 }
 
-.skills-subsec {
+.skills-subsec,
+.skill-items {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.skill-items li {
+    background-color: var(--txt-color);
+    color: var(--primary-bg);
+    margin: 0 1rem 1rem 0;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.skill-items li:hover {
+    background-color: var(--special-txt);
+    cursor: default;
+    transform: scale(1.05);
 }
 
 .skill-icon {
@@ -684,7 +704,11 @@ li {
     }
 
     .resume-itm {
-        padding: 1rem 2rem 1rem 2rem;
+        padding: 1rem 2rem;
+    }
+
+    .skill-items li {
+        margin: 1rem 1rem 0 0;
     }
 
     .title-name {
