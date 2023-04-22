@@ -418,8 +418,19 @@ li {
     color: var(--special-txt);
 }
 
-.experience-subtitle:hover {
+.experience-subtitle:hover a {
     text-decoration: underline;
+}
+
+.experience-subtitle span {
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--special-txt);
+}
+
+
+.experience-subtitle-tools {
+    font-size: 1.4rem;
 }
 
 .links-container a:hover {
@@ -513,6 +524,7 @@ li {
 .subitem-title {
     font-size: 1.8rem;
     font-weight: 600;
+    color: var(--special-txt);
 }
 
 .skills-subsec,
